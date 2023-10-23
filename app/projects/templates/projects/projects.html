@@ -15,14 +15,16 @@
     {% for project in projects %}
 
     <tr>
-        <th>
+        <td>
             <a href="{% url 'project' project.id %}">{{ project.title }}
                 {% if project.topRated %}
                 <strong>TOP RATED</strong>
                 {% endif %}
             </a>
-        </th>
-        <th>{{ project.description }}</th>
+        </td>
+        <td>{{ project.description }}</td>
+        <td><a href="{% url 'updated-project' project.id %}">EDIT</a></td>
+        <td><a href="{% url 'deleted-project' project.id %}">DELETE</a></td>
     </tr>
 
     {% endfor %}
